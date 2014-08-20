@@ -5,7 +5,16 @@ Stash for code written during my MSci (05-06) and since, on Video Feedback and F
 
 # What it does
 
-Using GL for high performance screen rendering, it takes an image & does a lossy ROTATE + MAGNIFY operation on successive frames. This simulates video feedback; the resulting images are often fractal in data.
+Using GL for high performance screen rendering, it takes an image & does
+a lossy ROTATE + MAGNIFY operation on successive frames. This simulates video
+feedback; the resulting images are often fractal in nature.
+
+The code randomly changes the ROTATE and MAGNIFY parameters, and probably some
+others as well (certainly a JITTER parameter which generates colour noise at
+the core of the image).
+
+It's pretty psychedlic, and you get to choose the image used as the (repeated)
+starting configuration.
 
 ![Screenshot](/screenshot.png)
 
