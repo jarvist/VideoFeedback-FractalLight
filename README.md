@@ -18,6 +18,10 @@ starting configuration.
 
 ![Screenshot](/screenshot.png)
 
+# Youtube Demo
+
+http://youtu.be/9VXTFCwtSz0
+
 # How to get it working
 
 You'll need something like this to get it all working:
