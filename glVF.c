@@ -67,6 +67,23 @@ void inputpic(char * filename)
    fclose(f);
 }
 
+void outputpic(char * filename)
+{
+  int x,y,colour;
+   unsigned char tmp;
+   int pmax;
+
+   FILE * f;
+   f=fopen(filename,"w");
+
+   fprintf(f,"P6\n800 800\n255\n"); //.pgm filetype
+
+   fwrite(&curpic[0][0][0],1,X_RES*Y_RES*3,f);
+
+   fclose(f);
+}
+
+
 swap()
 {
   int x,y,colour;
@@ -133,7 +150,7 @@ zoom()
 
 //original on: http://stackoverflow.com/questions/503816/linux-fastest-way-to-draw
 void renderScene() {    
-
+    char filename[50];
     // limit FPS
 	glutTimerFunc(100, renderScene, 0);
 
@@ -151,6 +168,11 @@ void renderScene() {
 	if (rand()%10==0) TWIST=(1.0*(float)rand()/RAND_MAX)-0.5; //head spinning too much!
     }
     zoom();
+
+    // save picture frame for posterity
+    sprintf(filename,"VF_%08d.ppm",fcount);
+    outputpic(filename);
+    //outputpic("sausages.png");
 
     glEnable (GL_TEXTURE_2D);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
@@ -194,7 +216,7 @@ int main(int argc, char **argv) {
 	// max FPS
     //glutIdleFunc(renderScene);
 
-inputpic("output.pnm");
+    inputpic("output.pnm");
 
     glutMainLoop();
 
