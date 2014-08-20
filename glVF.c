@@ -24,6 +24,8 @@ Install GLUT development libraries, on Ubuntu/Deb something like this should wor
 
 Compile with something like:
 gcc -o glVF -lglut glVF.c  -funroll-all-loops -funsafe-math-optimizations -O999 -finline
+In 2014 on Debian this becomes:
+gcc -o glVF glVF.c  -funroll-all-loops -funsafe-math-optimizations -O999 -finline -lm -lGL -lglut
 */
 
 unsigned char segfault_buffer1[X_RES][Y_RES][3];
