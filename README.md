@@ -7,6 +7,8 @@ Stash for code written during my MSci (05-06) and since, on Video Feedback and F
 
 Using GL for high performance screen rendering, it takes an image & does a lossy ROTATE + MAGNIFY operation on successive frames. This simulates video feedback; the resulting images are often fractal in data.
 
+![Screenshot](/screenshot.png)
+
 # How to get it working
 
 You'll need something like this to get it all working:
