@@ -1,7 +1,12 @@
 VideoFeedback-FractalLight
 ==========================
 
-Stash for code written during my MSci (05-06) and since, on Video Feedback and Fractal Light
+Stash for code written during my MSci (05-06) and since, on Video Feedback.
+
+These can be related to the Fractals that form in magnifying (+ polygonal 
+apertured) lasers. Codes for this, which were the actual content of my MSci 
+project, have been dug up, dusted off, and made to compile with vaguely modern GL:
+https://github.com/jarvist/FractalLight
 
 # What it does
 
