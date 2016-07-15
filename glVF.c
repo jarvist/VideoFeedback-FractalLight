@@ -4,7 +4,7 @@
 */
 
 #include <GL/glut.h>
-#include <GL/glut.h>
+
 #include <stdio.h>
 #include <math.h>
 #include <limits.h>
@@ -62,7 +62,7 @@ void inputpic(char * filename)
 
    fscanf(f,"P6\n800 800\n255\n"); //.pgm filetype
 
-  fread(&curpic[0][0][0],1,X_RES*Y_RES*3,f);
+   fread(&curpic[0][0][0],1,X_RES*Y_RES*3,f);
 
    fclose(f);
 }
@@ -84,7 +84,7 @@ void outputpic(char * filename)
 }
 
 
-swap()
+void swap()
 {
   int x,y,colour;
 
@@ -94,7 +94,7 @@ swap()
           curpic[x][y][colour]=newpic[x][y][colour];
 }
 
-zoom()
+void zoom()
 {
  int x,y,pcount,colour;
    float nx,ny,np,dx,dy,ddx=0.0,ddy=0.0;
@@ -216,7 +216,9 @@ int main(int argc, char **argv) {
 	// max FPS
     //glutIdleFunc(renderScene);
 
+    fprintf(stderr,"GLUT initialised; loading photo...\n");
     inputpic("output.pnm");
+    fprintf(stderr,"OK, photo loaded... ");
 
     glutMainLoop();
 
